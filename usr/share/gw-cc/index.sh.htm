@@ -1,0 +1,108 @@
+#!/bin/bash
+source translation
+source ~/.oma-welcome
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=oma-welcome
+
+[ -z "$USER" ] && USER="$(id -nu)"
+REALNAME="$(getent passwd $USER |cut -d: -f5)"
+[ -z "$REALNAME" ] && REALNAME="$USER"
+
+sed \
+	-e "s|%1|<span class=\"username\">$REALNAME</span>|g" \
+	-e "s|%2|$(cat /etc/openmandriva-release)|g" \
+	-e "s|%3|$(uname -r)|g" \
+	<<EOF
+<html>
+<!--
+	Miniport 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- #Insira o conteúdo entre os 2 EOF sem se preocupar com aspas -->
+
+	<head>
+		<title>$title</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<style>
+			@font-face {
+				font-family: "GoodTimes";
+				src: url(css/font/good-times.ttf) format("truetype");
+			}
+		</style>
+	</head>
+<body>
+<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+			<li class='active'><a href="index.sh.htm">$menuindex</a></li>
+			<!-- <li><a href="news.sh.htm">$menunews</a></li> -->
+			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
+			<li><a href="conf.sh.htm">$menuconfigure</a></li>
+			<li><a href="apps.sh.htm">$menuapps</a></li>
+			<li><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
+			<li><a href="about.sh.htm">$menuabout</a></li>
+		</ul>
+	</nav>
+<!-- Home -->
+	<div class="wrapper">
+		<div class="logo">
+			<img src="images/omth.png" style="padding-top: 60px;"/>
+		</div>
+		 <article class="articles">
+			<h1 class="titlePage"> $title </h1>
+			<br/>
+			<p>$hi</p>
+			<br/>
+			<p>$text</p>
+		 </article>
+		 <br/>
+		 <article class="articles">
+			<p>
+				$you_are_using
+			</p>
+		 </article>
+	</div>
+EOF
+
+if [ $autostart -eq 1 ]; then
+
+cat << EOF
+	<div class="nostartauto">
+		<span>
+			 <input type="checkbox" value="./apps/nostart.run" name="checket" onClick="if (this.checked) { window.location = this.value; }"/>
+		 $nostarwithoma </span>
+	</div>
+EOF
+
+else
+
+cat << EOF
+	<div class="nostartauto">
+		<span>
+			 <input type="checkbox" value="./apps/makestart.run" name="checket" onClick="if (this.checked) { window.location = this.value; }"/>
+			 $makestartwithoma </span>
+	</div>
+EOF
+
+fi
+
+cat << EOF
+    <div id="donate">
+    <p><a target="hidden" href=./apps/open-donation.run><img src="images/donate.png" width="64" height="64" /></a>
+    <span><a class="title" target="hidden" href=./apps/open-donation.run><br/></a></p>
+    </div>
+EOF
+
+cat << EOF
+	<div id="rodape">
+		<a href="omfeat.sh.htm" class="button">$next</a>
+	</div>
+</body>
+</html>
+EOF

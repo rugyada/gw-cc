@@ -1,0 +1,126 @@
+#!/bin/bash
+source translation
+#Translation
+cat << EOF
+<html>
+<!--
+	Miniport 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- #Insira o conteúdo entre os 2 EOF sem se preocupar com aspas -->
+
+	<head>
+		<title>Welcome to OpenMandriva</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+
+	</head>
+<body>
+EOF
+cat << EOF
+<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+			<li><a href="index.sh.htm">$menuindex</a></li>
+			<!-- <li><a href="news.sh.htm">$menunews</a></li> -->
+			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
+			<li class='active'><a href="conf.sh.htm">$menuconfigure</a></li>
+			<li><a href="apps.sh.htm">$menuapps</a></li>
+			<li><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
+			<li><a href="about.sh.htm">$menuabout</a></li>
+		</ul>
+	</nav>
+
+<!-- Home -->
+	<div class="wrapper">
+		<div id="container">
+		<p class="titlePage">$cabecalho01
+		$cabecalho02 </p>
+		<br/>
+		<ul id="item-list">
+			<li>
+				<p><a class="title" target="hidden" href=./apps/updatesys.run><img src="images/system-update.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/updatesys.run>$titleupdatesys</a></span><br/>$descupdate</p>
+			</li>
+			<li>
+				<p><a target="hidden" href=./apps/connect.run><img src="images/network.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href="./apps/connect.run">$titleconfiglan </a></span><br/> $descconfiglan </p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/05-keys.run><img src="images/keys.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/05-keys.run>$titlekeys</a></span><br/>$desckeys</p>
+			</li>
+			<li>
+				<p><a href=./apps/07-firewall.run><img src="images/firewall.svg" class="alignleft"/></a>
+				<span><a class="title" href="./apps/07-firewall.run">$titlefirewall </a></span><br/> $descfirewall</p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/user.run><img src="images/users.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/user.run>$titledrakuser</a></span><br/>$descdrakuser</p>
+			</li>
+						<li>
+				<p><a href=./apps/partitionmanager.run><img src="images/drive-partition.svg" class="alignleft"/></a>
+				<span><a class="title" href="./apps/partitionmanager.run">$titlediskdrake </a></span><br/> $descdiskdrake </p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/04-install-xguest.run><img src="images/xguest.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/04-install-xguest.run>$titlexguest</a></span><br/>$descxguest</p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/02-bluetooth.run><img src="images/bluetooth.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/02-bluetooth.run>$titlebluetooth</a></span><br/>$descbluetooth</p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/04-install-cutefish.run><img src="images/cutefish.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/04-install-cutefish.run>$titlecutefish</a></span><br/>$desccutefish</p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/04-install-mauishell.run><img src="images/mauishell.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/04-install-mauishell.run>$titlemauishell</a></span><br/>$descmauishell</p>
+			</li>
+			<li>
+				<p><a class="title" href=./apps/04-install-gnomeshell.run><img src="images/gnomeshell.svg" class="alignleft"/></a>
+				<span><a class="title" href=./apps/04-install-gnomeshell.run>$titlegnomeshell</a></span><br/>$descgnomeshell</p>
+			</li>
+			<!-- <li>
+				<p><a class="title" target="hidden" href=./apps/kscreen.run><img src="/usr/share/oma-welcome/images/video-display.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/kscreen.run>$titlexfdrake</a></span><br/>
+				$descxfdrake<br/><br/></span></p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/printer_manager.run><img src="/usr/share/oma-welcome/images/printer.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/printer_manager.run>$titleconfigprint</a></span><br/>
+				$descconfigprint<br/><br/><br/></p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/abrir-kdethemes.run><img src="/usr/share/oma-welcome/images/desktop-theme.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/abrir-kdethemes.run>$titlechangethemes</a></span><br/>$descchangethemes</p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/abrir-kdeicons.run><img src="/usr/share/oma-welcome/images/desktop-icons.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/abrir-kdeicons.run>$titlechangeicons</a></span><br/>$descchangeicons</p>
+			</li> -->
+ 			<li>
+				<p><a class="title" target="hidden" href=./apps/unusedpackages.run><img src="images/trash.svg" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/unusedpackages.run>$titleunusedpackages</a></span><br/>$descunusedpackages</p>
+			</li>
+<!-- 			<li>
+				<p><a class="title" target="hidden" href=./apps/abrir-om-cc.run><img src="images/om-ccnew.png" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/abrir-om-cc.run>$titleomcc</a></span><br/>$omccnewdesc</p>
+			</li> -->
+		</ul>
+	</div> 
+	<div id="lodape">
+		<a href="omfeat.sh.htm" class="button">$previous</a>
+	</div>
+	<div id="rodape">
+		<a href="apps-office.sh.htm" class="button">$next</a>
+	</div>
+</body>
+</html>
+EOF

@@ -1,0 +1,104 @@
+#!/bin/bash
+source translation
+#Translation
+cat << EOF
+<html>
+<!--
+	Miniport 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- #Insira o conteúdo entre os 2 EOF sem se preocupar com aspas -->
+
+	<head>
+		<title>Welcome to OpenMandriva</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+<body>
+EOF
+cat << EOF
+<!-- Nav -->
+	<nav id="nav">
+		<ul class="container">
+			<li><a href="index.sh.htm">$menuindex</a></li>
+			<!-- <li><a href="news.sh.htm">$menunews</a></li> -->
+			<li><a href="omfeat.sh.htm">$menuomfeat</a></li>
+			<li><a href="conf.sh.htm">$menuconfigure</a></li>
+			<li class='active'><a href="apps.sh.htm">$menuapps</a></li>
+			<li><a href="community.sh.htm">$menucontribute</a></li>
+			<li><a href="repo.sh.htm">$menurepo</a></li>
+			<li><a href="about.sh.htm">$menuabout</a></li>
+		</ul>
+	</nav>
+
+<!-- Home -->
+	<div class="wrapper">
+		<div id="container">
+		<p class="titlePage">$cabecalho03  $cabecalho04</p>
+		<div id='cssmenu'>
+		    <ul>
+			 <li><a href='apps-office.sh.htm'><span>$menuappsoffice</span></a></li>
+			 <li><a href='apps-graphics.sh.htm'><span>$menuappsgraphics</span></a></li>
+			 <li><a href='apps-internet.sh.htm'><span>$menuappsinternet</span></a></li>
+			 <li><a href='apps-multimedia.sh.htm'><span>$menuappsmultimedia</span></a></li>
+			 <li><a href='apps-development.sh.htm'><span>$menuappsdevelopment</span></a></li>
+			 <li><a href='apps-utility.sh.htm'><span>$menuappsutility</span></a></li>
+			 <li><a href='apps-edu.sh.htm'><span>$menuappsedu</span></a></li>
+			 <li class='active'><a href='apps-kids.sh.htm'><span>$menuappskids</span></a></li>
+			 <li><a href='apps-gaming.sh.htm'><span>$menuappsgaming</span></a></li>
+		    </ul>
+		    <br/>
+		</div>
+		<ul id="item-list">
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-scratch.run><img src="images/scratch.png" class="alignleft"/></a>
+				<span><a class="title" target="hidden" href=./apps/install-scratch.run>$titlescratch</a></span><br/>$descscratch</p>
+			</li>
+ 			<!-- <li>
+ 							<p><a class="title" target="hidden" href=./apps/install-gcompris.run><img src="images/gcompris.svg" class="alignleft"/></a>
+ 							<span><a class="title" target="hidden" href=./apps/install-gcompris.run>$titlegcompris</a></span><br/>$descgcompris</p>
+ 						</li> -->
+			<li>
+				<p><a class="title" target="hidden" href="./apps/install-tuxpaint.run"><img src="images/tux_paint.png" class="alignleft"/>
+				<span><a class="title" target="hidden" href="./apps/install-tuxpaint.run">$titletuxpaint </a></span><br/>$desctuxpaint</br></br></p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-supertux.run><img src="images/supertux.png" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-supertux.run>$titlesupertux</a></span><br/>$descsupertux</p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-supertuxkart.run><img src="images/supertuxkart.png" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-supertuxkart.run>$titlesupertuxkart</a></span><br/>$descsupertuxkart</p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-etr.run><img src="images/etr.svg" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-etr.run>$titleetr</a></span><br/>$descetr</p>
+			</li>
+			<!-- <li>
+				<p><a class="title" target="hidden" href=./apps/install-blinken.run><img src="images/blinken.svg" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-blinken.run>$titleblinken</a></span><br/>$descblinken</p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-klettres.run><img src="images/klettres.svg" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-klettres.run>$titleklettres</a></span><br/>$descklettres</p>
+			</li>
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-ktuberling.run><img src="images/ktuberling.svg" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-ktuberling.run>$titlektuberling</a></span><br/>$descktuberling</p>
+			</li> -->
+			<li>
+				<p><a class="title" target="hidden" href=./apps/install-puzzlejigsaw.run><img src="images/puzzlejigsaw.svg" class="alignleft"/>
+				<span><a class="title" target="hidden" href=./apps/install-puzzlejigsaw.run>$titlepuzzlejigsaw</a></span><br/>$descpuzzlejigsaw</br></p>
+			</li>
+		</ul>
+	</div> 
+	<div id="rodape">
+	<a href="community.sh.htm" class="button">$next</a>
+	</div>
+</body>
+</html>
+EOF
