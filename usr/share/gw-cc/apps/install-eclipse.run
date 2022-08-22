@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if which eclipse; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" Eclipse IDE is already installed."
+else
+	APP=$"Eclipse"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes eclipse-platform
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which eclipse; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi

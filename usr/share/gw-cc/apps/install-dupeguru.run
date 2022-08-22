@@ -1,0 +1,15 @@
+#!/bin/bash
+if which dupeguru &>/dev/null; then
+	kdialog --title $"OpenMandriva" --msgbox $"dupeGuru is already installed."
+else
+	APP=$"Dupeguru"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes dupeguru
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which dupeguru &>/dev/null; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi
