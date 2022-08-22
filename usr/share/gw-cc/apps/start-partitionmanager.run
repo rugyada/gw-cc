@@ -1,0 +1,3 @@
+#!/bin/sh
+#partitionmanager app for non-kde
+exec partitionmanager.sh

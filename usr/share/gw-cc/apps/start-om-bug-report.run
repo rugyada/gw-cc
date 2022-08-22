@@ -1,0 +1,2 @@
+#!/bin/sh
+exec omv-bug-report.sh
