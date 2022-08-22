@@ -1,0 +1,3 @@
+#!/bin/bash
+echo 'autostart=0' > ~/.gw-cc;
+kdialog --title $"OpenMandriva"  --msgbox  $" The gw-cc will not initialize with the system";
