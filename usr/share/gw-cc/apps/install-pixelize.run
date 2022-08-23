@@ -1,0 +1,16 @@
+#!/bin/bash
+if which pixelize &>/dev/null; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" Pixelize is already installed."
+else
+	APP=$"Pixelize"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	enable-repo unsupported
+	pkexec dnf install --assumeyes pixelize
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which pixelize &>/dev/null; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi

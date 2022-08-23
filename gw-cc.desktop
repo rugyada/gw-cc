@@ -1,16 +1,24 @@
 [Desktop Entry]
 Categories=Qt;KDE;Settings;
+Comment[it_IT]=
+Comment=
 Exec=/usr/bin/gw-cc
+GenericName[it_IT]=OpenMandriva GWelcome Center
 GenericName=OpenMandriva GWelcome Center
-GenericName[it]=OpenMandriva GWelcome Center
 GenericName[de]=OpenMandriva GWelcomezentrum
 Icon=gw-cc
+MimeType=
+Name[it_IT]=OpenMandriva GWelcome Center
 Name=OpenMandriva GWelcome Center
-Name[it]=OpenMandriva GWelcome Center
 Name[de]=OpenMandriva GWelcomezentrum
+Path=
 StartupNotify=true
 Terminal=false
+TerminalOptions=
 Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
 X-KDE-HasTempFileOption=true
 X-KDE-StartupNotify=true
 X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,7 +1,8 @@
+#REVISIONARE
 Name:		gw-cc
-Version:	0.2.0.5
-Release:	3
-Summary:	OpenMandriva GWelcome Center
+Version:	0.3.0
+Release:	1
+Summary:	GWelcome Center
 License:	GPLv2
 Group:		System/Configuration/Other
 URL:		https://github.com/rugyada/gw-cc

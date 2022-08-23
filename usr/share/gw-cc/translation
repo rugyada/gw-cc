@@ -1,30 +1,35 @@
 #!/bin/bash
+
 #texts to be translated
 #index.sh.htm
 #Locale
 export TEXTDOMAINDIR="/usr/share/locale"
-export TEXTDOMAIN=gw-cc
-#
-hi=$"Hi"
+export TEXTDOMAIN=om-welcome
+hi=$"Hi %1!"
 title=$"OpenMandriva GWelcome Center"
 #Name=$"OpenMandriva GWelcome Center"
 #sections menu
 menuindex=$"Welcome"
-menusw=$"Software"
-menuhardware=$"Hardware"
-menuhardware2=$"Devices Configuration"
-menulocaldisk=$"Local Disk configuration"
-menunetwork=$"Networks"
-menushare=$"Network Sharing"
-menunetserv=$"Network servers"
-menusystem=$"System"
-menudesktop=$"Desktop"
-menusecurity=$"Security"
-menuabout=$"About"
+menunews=$"Features"
 menuomfeat=$"OM Features"
 menuconfigure=$"Configure"
 menucontribute=$"Contribute"
 menurepo=$"Repositories"
+menuabout=$"About"
+text=$"OpenMandriva GWelcome Center is a set of tools to help you to configure your system, in each its part.
+All in the same place and in the easiest way possible: <br/>
+In each section you will find the programs to configure: <br/>
+- Software Management<br/>
+- Devices, Local Disks and Partition Manager<br/>
+- Network and Internet<br/>
+- System Configuration<br/>
+- System Security<br/>
+- and other parts of your system.<br/>"
+
+#translations of apps.sh.htm
+next=$"Next"
+previous=$"Previous"
+#menuappsconfig=$"Settings"
 menuapps=$"Applications"
 menuappsoffice=$"Office"
 menuappsgraphics=$"Graphics"
@@ -35,7 +40,6 @@ menuappsutility=$"Utility"
 menuappsgaming=$"Games"
 menuappsdevelopment=$"Development"
 menuappsinternet=$"Internet"
-#
 cabecalho01=$"Click on the menus below to configure your OpenMandriva Lx"
 cabecalho02=$"- Update your system, configure network, printer, desktop theme, icons."
 cabecalho03=$"Install some extra applications to OpenMandriva Lx"
@@ -51,139 +55,14 @@ titleconfigprint=$"Configure your printer"
 descconfigprint=$"Configure your printer, add drivers for HP, Epson, etc."
 titleconfiglan=$"Configure the network"
 descconfiglan=$"Edit your network connections"
-titleomcc=$"OpenMandriva Control Center"
+titleomcc=$"GWelcome Control Center"
 titleombugreport=$"Bug report tool"
 descombugreport=$"The simple shell script will help in bug fixing process. The file generated should be attached to any bugreport"
-#
-#section presentation text
-text=$"OpenMandriva GWelcome Center is a set of tools to help you to configure your system, in each its part.
-All in the same place and in the easiest way possible: <br/>
-In each section you will find the programs to configure: <br/>
-- Software Management<br/>
-- Devices, Local Disks and Partition Manager<br/>
-- Network and Internet<br/>
-- System Configuration<br/>
-- System Security<br/>
-- and other parts of your system.<br/>"
-# OpenMandriva GWelcome Center
-# Sections and sub-Sections
-#
-#section 01 sw-management
-titlepage01=$"Software and media management"
-#01-Install & Remove software
-titlednfdragora=$"Install applications with dnfdragora"
-descdnfdragora=$"Find and install applications"
-#01-Edit media Sources
-titleenrestrict=$"Add restricted"
-descenrestrict=$"Enable restricted repository"
-titleremrestrict=$"Remove restricted"
-descremrestrict=$"Disable restricted repository"
-titleenunsupported=$"Add unsupported"
-descenunsupported=$"Enable unsupported repository"
-titleremunsupported=$"Remove unsupported"
-descremunsupported=$"Disable unsupported repository"
-titleennonfree=$"Add non-free"
-descennonfree=$"Enable non-free repository"
-titleremnonfree=$"Remove non-free"
-descremnonfree=$"Disable non-free repository"
-titlerepopicker=$"OpenMandriva repo-picker"
-descrepopicker=$"Enable and disable repositories the easy way"
-#
-#01-KBackup
-titlekbackup=$"KBackup"
-desckbackup=$"Backup your data with an easy to use user interface"
-titlekdiskfree=$"Storage Devices"
-desckdiskfree=$"Shows the disk usage of the mounted devices"
-#
-#section 02 Hardware
-titlepage02=$"Devices Configurations"
-#02-Configure video
-titlexfdrake=$"Display and Monitor"
-descxfdrake=$"Manage and configure monitor and display"
-#02-Configure printer
-titleconfigprint=$"Configure your printer"
-descconfigprint=$"Configure your printer, add drivers for HP, EPSON, etc"
-titlebluetooth=$"Bluetooth"
-descbluetooth=$"Start and enable bluetooth service"
-#
-#section 02B local Disk configuration
-titlepage06=$"Local Disk Configurations"
-#02B-disk management
-titlediskdrake=$"Configure your local drives"
-descdiskdrake=$"Change, configure and manage your local drives";
-titleaudio=$"Audio Volume"
-descaudio=$"Configure Audio"
-#
-#section 03 Networks
-titlepage03=$"Networks Configurations"
-#03-Configure LAN
-titleconfiglan=$"Connections"
-descconfiglan=$"Edit your Network Connections"
-#
-#section 04 System Configurations
-titlepage04=$"System Configurations"
-#04-Add & Configure user and groups
-titledrakuser=$"Add & Configure user and groups"
-descdrakuser=$"Here you can configure new users add groups etc"
-#04-Services management
-titleservices=$"Services management"
-descservices=$"Start and stop of the entire services available on the system"
-#04-Add fonts
-titledrakfont=$"Fonts"
-descdrakfont=$"Font management or install new fonts"
-#04-Configure time
-titledrakclock=$"Configure time"
-descdrakclock=$"Change time, configure the nts"
-#
-#04-Configure Keyboard
-titlekeyboard=$"Configure keyboard"
-desckeyboard=$"Change or configure keyboard layout"
-#
-#04-Configure Touchpad
-titletouchpad=$"Configure touchpad"
-desctouchpad=$"Configure touchpad input device"
-#04-Other
-titlexguest=$"Install Guest Account"
-descxguest=$"Creates xguest user as a locked down user"
-titlednfdrake=$"Install applications with DnfDrake"
-descdnfdrake=$"Find and install applications with DnfDrake, and much more"
-titlediscover=$"Install Discover"
-descdiscover=$"Plasma 5 package manager"
-#
-#04-Themes management
+titlechangeicons=$"Desktop Icons"
+descchangeicons=$"Change or install your favorite icons theme";
 titlechangethemes=$"Desktop Themes"
 descchangethemes=$"Change or install your favorite Plasma theme"
-#04-Change icons theme
-titlechangeicons=$"Desktop Icons"
-descchangeicons=$"Change or install your favorite icons theme"
-#04-boot configuration
-titleconfigboot=$"Configure the system boot"
-descconfigboot=$"If you need to change the boot order of the system or repair grub2 manually or later add another operating system"
-#
-#section 05 Security
-titlepage07=$"Security Configurations"
-#05-Security management
-titlefirewall=$"Configure your firewall"
-descfirewall=$"Set up a firewall and monitor network connections";
-#05-firewall applet
-titlefirewall2=$"Open your firewall applet"
-descfirewall2=$"Change, configure and manage your firewall settings from the applet";
-#05-Keys
-titlekeys=$"Passwords and Keys"
-desckeys=$"Manage your passwords and encryption keys"
-#
-#About.sh.htm
-about=$"About "
-license=$"This software is licensed under the GNU General Public License version 2 (GPLv2)."
-dependency=$"It uses Qt5 WebEngine and htmlscript."
-bugs=$"For bugs, suggestions and improvements, please head to "
-endapp=$"Exit"
-#Additional
-you_are_using=$"You are using"
-with_kernel=$"with kernel"
-arch=$"architecture"
-next=$"Next"
-######
+
 #translations of apps-graphics.sh.htm
 titlegimg=$"GIMP"
 descgimp=$"Create and edit your images in a professional way with this powerful open source tool"
@@ -225,6 +104,8 @@ titleharuna=$"Haruna"
 descharuna=$"Open source video player built with Qt/QML and libmpv"
 titlebabe=$"Babe"
 descbabe=$"Handle your whole music collection by retreaving semantic information from the web"
+titlebino=$"Bino 3D Video Player"
+descbino=$"Stereoscopic 3D video player with multi-display support"
 titleqmmp=$"QMMP"
 descqmmp=$"A QT based media player similar to Winamp"
 titlemusescore=$"MuseScore"
@@ -393,20 +274,19 @@ titlequaternion=$"Quaternion"
 descquaternion=$"IM client for the Matrix protocol"
 titledropbox=$"Dropbox"
 descdropbox=$"A free service that lets you bring your photos, docs, and videos anywhere and share them easily"
-#
+
+#translation of install-scribus
 installed=$"are already installed"
 noinstalled=$"not installed"
-#
-titleunusedpackages=$"Clean packages"
-descunusedpackages=$"Auto remove unused packages"
+
 #translations of omfeat.sh.htm
 descomfeat=$"OpenMandriva brand-name applications and features"
 titleupdconf=$"Update Configuration"
 descupdconf=$"Tool for configuring automatic updates"
 titlefeellike=$"Desktop Presets"
 descfeellike=$"Tool to customize the appearance of your OpenMandriva Plasma desktop to look and feel similar to other systems you may be used to"
-titleomcc2=$"Control Center"
-descomcc2=$"OpenMandriva Control Center helps you to configure your system"
+titleomcc2=$"GWelcome Control Center"
+descomcc2=$"GWelcome Control Center helps you to configure your system"
 
 #translation of community.sh.htm
 titlecommunity=$"How to contribute to OpenMandriva"
@@ -432,11 +312,175 @@ descinvolved=$"How to contribute to OpenMandriva. If you have time, we welcome y
 titledonation=$"Donation"
 descdonation=$"You can give us your love and care by donating your time or money to OpenMandriva Lx"
 descrn=$"Click here to be sure you read the latest Release Notes and Errata"
-#
+nostarwithoma=$"Do not start om-welcome on login"
+makestartwithoma=$"Make om-welcome start on login"
+endapp=$"Finish"
+
+#translation of About.sh.htm
+about=$"About this program"
+license=$"This software is licensed under the GNU General Public License version 2 (GPLv2)."
+dependency=$"It uses Qt5 WebEngine and htmlscript."
+bugs=$"For bugs, suggestions and improvements, please head to "
+
 #translation of Repositories.sh.htm
 repomain=$"The Main repository contains the main packages that make up OpenMandriva Lx. It should always be enabled"
 repouns=$"Unsupported contains packages that are free, but not officially supported by OpenMandriva. While we will try to fix them if something breaks, this is a low priority. Enable Unsupported if you need them and don't mind an occasional crash"
 reporest=$"Restricted contains packages that are free, but encumbered by patents that may make them illegal to use or distribute in some countries. You are responsible for complying with your local laws"
 reponf=$"Non-free contains packages that are not free (as in Open Source). Even if we want to, we cannot fix problems in them. We can not read the code, or verify what the packages actually do. While there are no known side effects, they may contain spyware or malware. They may erase your storage. You are on your own"
 reponoelse=$"Please use only Software Repository Selector to enable/disable repositories"
+
+#Additional
+you_are_using=$"You are using %2 with kernel %3."
+
+#translation of News.sh.htm
+newfeature=$"New Features and Major Changes"
+releasepreambule=$"OpenMandriva Lx is published by OpenMandriva Association. Over the course of the year past we have tried to evolve the way you use your desktop. Here are some of the things we have done for this release:"
+omccnew=$"OM Control Center"
+
+freshpackages=$"Fresh Packages"
+freshpackagedesc=$"Some fresh packages included with this release include Krita (Digital Painting), Kamoso (Webcam Viewer), SMPlayer, VLC Player, KBackup, Plasma NetworkManager applet, KMail, Falkon browser, Mozilla Firefox, Systemd and Firewalld. For the technically adept we have provided systemtap a system performance analysis tool "
+kerneldesc=$"Kernel $(uname -r | cut -d ' ' -f 2) is the latest available series. OpenMandriva Lx kernel features BFQ disk I/O scheduler, UKSM memory management,  desktop system performance and responsiveness in mind. There are desktop server verions available each designed with their respective end use on mind<br/>
+<br/>
+<b>What's New:</b> HT/SMT NICE is enabled by default for better responsiveness and realtime behaviour on PC's with HT (Hyper-Threading), this improves the performance of foreground applications at the expense of backgound ones. Your desktop / gui / applications will remain fast even if you run folding@home, mprime, seti@home, etc. "
+kdedesc=$"KDE Plasma workspace $(plasmashell --version| cut -d ' ' -f 2) provides a clean, unified desktop for OpenMandriva Lx. It has all the tools required to be productive whilst providing a pleasant, functional environment. This release includes an updated KDE Frameworks $(rpm -q --qf '%{VERSION}' kio). Frameworks 5 is the next generation of KDE libraries, modularized and optimized for easy integration in Qt applications."
+libreofficedesc=$"LibreOffice $(libreoffice --version| cut -d ' ' -f 2) is the newest available stable release series, which means you can rely on it to not crash and compromise your precious data. As usual, there are a lot of minor improvements, most of which are internal fixes that are not noticeable by regular users, but some are actually interesting"
+omccnewdesc=$"New GWelcome Control Center, to help you configure your system"
+efibootdesc=$"This release of OpenMandriva Lx incorporates working support for EFI booting. It should be possible to boot the live system on majority of machines. Please file bug reports at <a href='./apps/open-bugzilla.run' target="hidden" class='blue'>OpenMandriva Issue Traker</a>"
+abfdesc=$"All OpenMandriva releases are built using an advanced platform called ABF. ABF (Automated Build Farm) is a distributed environment to build distributions that supports all things from managing the source code to creating ISO images. ABF is not just a hosting service for source code, but a system to build and publish packages. You can check, signup and contribute to ABF/OpenMandriva development at <a href='./apps/open-abf.run' target="hidden" class='titlePage'>http://abf.openmandriva.org</a>"
+omfldesc=$"You can configure your desktop to look and feel similar to other systems you may be used to.<br/>
+Currently available:<br/>
+OpenMandriva default<br/>
+Plasma Breeze<br/>
+Plasma Breeze Dark<br/>
+Ubuntu<br/>
+Windows 10<br/>
+Windows 7<br/>
+macOS Mojave"
+#######################################
+menusw=$"Software"
+menuhardware=$"Hardware"
+menuhardware2=$"Devices Configuration"
+menulocaldisk=$"Local Disk configuration"
+menunetwork=$"Networks"
+menushare=$"Network Sharing"
+menunetserv=$"Network servers"
+menusystem=$"System"
+menudesktop=$"Desktop"
+menusecurity=$"Security"
+#section 01 sw-management
+titlepage01=$"Software and media management"
+#01-Install & Remove software
+titlednfdragora=$"Install applications with dnfdragora"
+descdnfdragora=$"Find and install applications"
+#01-Edit media Sources
+titleenrestrict=$"Add restricted"
+descenrestrict=$"Enable restricted repository"
+titleremrestrict=$"Remove restricted"
+descremrestrict=$"Disable restricted repository"
+titleenunsupported=$"Add unsupported"
+descenunsupported=$"Enable unsupported repository"
+titleremunsupported=$"Remove unsupported"
+descremunsupported=$"Disable unsupported repository"
+titleennonfree=$"Add non-free"
+descennonfree=$"Enable non-free repository"
+titleremnonfree=$"Remove non-free"
+descremnonfree=$"Disable non-free repository"
+titlerepopicker=$"OpenMandriva repo-picker"
+descrepopicker=$"Enable and disable repositories the easy way"
 #
+#01-KBackup
+titlekbackup=$"KBackup"
+desckbackup=$"Backup your data with an easy to use user interface"
+titlekdiskfree=$"Storage Devices"
+desckdiskfree=$"Shows the disk usage of the mounted devices"
+#
+#section 02 Hardware
+titlepage02=$"Devices Configurations"
+#02-Configure video
+titlexfdrake=$"Display and Monitor"
+descxfdrake=$"Manage and configure monitor and display"
+#02-Configure printer
+titleconfigprint=$"Configure your printer"
+descconfigprint=$"Configure your printer, add drivers for HP, EPSON, etc"
+titlebluetooth=$"Bluetooth"
+descbluetooth=$"Start and enable bluetooth service"
+#
+#section 02B local Disk configuration
+titlepage06=$"Local Disk Configurations"
+#02B-disk management
+titlediskdrake=$"Configure your local drives"
+descdiskdrake=$"Change, configure and manage your local drives";
+titleaudio=$"Audio Volume"
+descaudio=$"Configure Audio"
+#
+#section 03 Networks
+titlepage03=$"Networks Configurations"
+#03-Configure LAN
+titleconfiglan=$"Connections"
+descconfiglan=$"Edit your Network Connections"
+#
+#section 04 System Configurations
+titlepage04=$"System Configurations"
+#04-Add & Configure user and groups
+titledrakuser=$"Add & Configure user and groups"
+descdrakuser=$"Here you can create new users or edit users and groups, etc"
+#04-Services management
+titleservices=$"Services management"
+descservices=$"Start and stop of the entire services available on the system"
+#04-Add fonts
+titledrakfont=$"Fonts"
+descdrakfont=$"Font management or install new fonts"
+#04-Configure time
+titledrakclock=$"Configure time"
+descdrakclock=$"Change time, configure the nts"
+#
+#04-Configure Keyboard
+titlekeyboard=$"Configure keyboard"
+desckeyboard=$"Change or configure keyboard layout"
+#
+#04-Configure Touchpad
+titletouchpad=$"Configure touchpad"
+desctouchpad=$"Configure touchpad input device"
+#04-Other
+titlexguest=$"Install Guest Account"
+descxguest=$"Creates xguest user as a locked down user"
+titlednfdrake=$"Install applications with DnfDrake"
+descdnfdrake=$"Find and install applications with DnfDrake, and much more"
+titleombugreport=$"Bug report tool"
+descombugreport=$"The simple shell script will help in bug fixing process. The file generated should be attached to any bugreport"
+titlediscover=$"Install Discover"
+descdiscover=$"Plasma 5 package manager"
+#
+#04-Themes management
+titlechangethemes=$"Desktop Themes"
+descchangethemes=$"Change or install your favorite Plasma theme"
+#04-Change icons theme
+titlechangeicons=$"Desktop Icons"
+descchangeicons=$"Change or install your favorite icons theme"
+#04-boot configuration
+titleconfigboot=$"Configure the system boot"
+descconfigboot=$"If you need to change the boot order of the system or repair grub2 manually or later add another operating system"
+#04-Other
+titlecutefish=$"Cutefish desktop"
+desccutefish=$"Install Cutefish desktop"
+titlemauishell=$"MauiShell desktop"
+descmauishell=$"Install MauiShell desktop"
+titlegnomeshell=$"Gnome desktop"
+descgnomeshell=$"Install Gnome desktop"
+titleunusedpackages=$"Clean packages"
+descunusedpackages=$"Auto remove unused packages"
+
+#
+#section 05 Security
+titlepage07=$"Security Configurations"
+#05-Security management
+titlefirewall=$"Configure your firewall"
+descfirewall=$"Set up a firewall and monitor network connections";
+#05-firewall applet
+titlefirewall2=$"Open your firewall applet"
+descfirewall2=$"Change, configure and manage your firewall settings from the applet";
+#05-Keys
+titlekeys=$"Passwords and Keys"
+desckeys=$"Manage your passwords and encryption keys"
+#
+

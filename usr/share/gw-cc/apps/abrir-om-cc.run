@@ -1,0 +1,16 @@
+#!/bin/sh
+if which om-control-center &>/dev/null; then
+	exec om-control-center
+else
+	APP=$"OpenMandriva Control Center"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes om-control-center
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which om-control-center &>/dev/null; then
+		kdialog --title $"OpenMandriva"  --msgbox  $" OpenMandriva Control Center successfully installed."
+	else
+		kdialog --title $"OpenMandriva"  --msgbox  $" OpenMandriva Control Center not installed."
+	fi
+fi
+

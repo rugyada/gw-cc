@@ -1,0 +1,15 @@
+#!/bin/bash
+if rpm -q wesnoth; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" wesnoth is already installed."
+else
+	APP=$"Wesnoth"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes wesnoth
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if rpm -q wesnoth; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi

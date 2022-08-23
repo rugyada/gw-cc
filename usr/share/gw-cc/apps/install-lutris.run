@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if rpm -q lutris; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" lutris is already installed."
+else
+	APP=$"Lutris"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	pkexec dnf install --assumeyes lutris
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if rpm -q lutris; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi

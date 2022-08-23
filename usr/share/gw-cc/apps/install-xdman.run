@@ -1,0 +1,16 @@
+#!/bin/bash
+if which xdman; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" XTreme Download Manager is already installed."
+else
+	APP=$"XTreme Download Manager"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	enable-repo unsupported
+	pkexec dnf install --assumeyes xdman
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which xdman; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi

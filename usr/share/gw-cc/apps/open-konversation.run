@@ -1,0 +1,2 @@
+#!/bin/bash
+xdg-open https://app.element.io/#/room/#openmandriva-space:matrix.org

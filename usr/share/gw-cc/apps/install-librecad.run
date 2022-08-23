@@ -1,0 +1,16 @@
+#!/bin/bash
+if which librecad &>/dev/null; then
+	kdialog --title $"OpenMandriva"  --msgbox  $" LibreCAD is already installed."
+else
+	APP=$"LibreCAD"
+	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
+	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
+	enable-repo unsupported
+	pkexec dnf install --assumeyes librecad
+	qdbus $DB org.kde.kdialog.ProgressDialog.close
+	if which librecad &>/dev/null; then
+		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
+	else
+		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
+	fi
+fi
