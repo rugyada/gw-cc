@@ -1,17 +1,2 @@
 #!/bin/bash
-
-if which fotoxx; then
-	kdialog --title $"OpenMandriva"  --msgbox  $" Fotoxx is already installed."
-else
-	APP=$"Fotoxx"
-	DB=$(kdialog --title $"OpenMandriva" --progressbar $"Installing $APP" 0)
-	qdbus $DB org.kde.kdialog.ProgressDialog.showCancelButton false
-	enable-repo unsupported
-	pkexec dnf install --assumeyes fotoxx
-	qdbus $DB org.kde.kdialog.ProgressDialog.close
-	if which fotoxx; then
-		kdialog --title $"OpenMandriva" --msgbox $"Installation succeeded."
-	else
-		kdialog --title $"OpenMandriva" --msgbox $"Installation failed."
-	fi
-fi
+konsole -e sh -c "pkexec dnf install fotoxx; echo 'Press enter to close konsole'; read"
