@@ -1,2 +1,3 @@
 #!/bin/bash
+    enable-repo unsupported
 konsole -e sh -c "pkexec dnf install fotoxx; echo 'Press enter to close konsole'; read"
